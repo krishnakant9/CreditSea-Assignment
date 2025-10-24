@@ -20,7 +20,7 @@ const Footer = () => {
 				</div>
 				<div className="mt-8 md:mt-0 md:order-1">
 					<p className="text-center text-gray-500">
-						© {new Date().getFullYear()} innovate. All rights reserved.
+						© {new Date().getFullYear()} CreditSea. All rights reserved.
 					</p>
 				</div>
 			</div>

@@ -39,7 +39,7 @@ const BasicDetails = ({ name, pan, mobilePhone, creditScore, addresses }) => {
 				</div>
 
 				
-				<div className="flex-shrink-0 flex flex-col items-center mx-auto md:mx-0 md:ml-6">
+				<div className="shrink-0 flex flex-col items-center mx-auto md:mx-0 md:ml-6">
 					<div
 						className={`w-32 h-32 rounded-full border-4 ${scoreInfo.border} ${scoreInfo.bg} flex flex-col justify-center items-center`}
 					>

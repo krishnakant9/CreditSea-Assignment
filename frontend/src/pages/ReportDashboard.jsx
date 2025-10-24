@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { Loader } from "../components/Loader";
 
 import BasicDetails from "../components/BasicDetails";
 import ReportSummary from "../components/ReportSummary";
@@ -36,7 +37,7 @@ const ReportDashboard = () => {
 	}, [reportId]);
 
 	if (isLoading) {
-		return <div className="text-center p-8">Loading report details...</div>;
+		return <Loader />;
 	}
 
 	if (error) {

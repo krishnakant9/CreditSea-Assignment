@@ -2,13 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
-
-const Loader = () => (
-  <div className="flex justify-center items-center p-16">
-    <div className="w-12 h-12 border-4 border-t-[#0075ff] border-gray-200 rounded-full animate-spin"></div>
-  </div>
-);
+import { Loader } from '../components/Loader';
 
 const ReportDetail = () => {
   const [reports, setReports] = useState([]);
