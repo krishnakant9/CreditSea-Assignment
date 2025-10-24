@@ -21,7 +21,7 @@ const ReportDashboard = () => {
             try {
                 setIsLoading(true);
                 const res = await axios.get(
-                    `http://localhost:5000/api/reports/${reportId}`
+                    `/api/reports/${reportId}`
                 );
                 setReport(res.data);
                 setIsLoading(false);

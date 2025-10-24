@@ -41,13 +41,13 @@ export const uploadReport = async (req, res) => {
 				.json({ message: "No file uploaded or file type was incorrect." });
 		}
 
-		const filePath = req.file.path;
+		
 
-		const xmlData = fs.readFileSync(filePath, "utf-8");
+		const xmlData = req.file.buffer.toString("utf-8");
 
 		parser.parseString(xmlData, async (err, result) => {
 			if (err) {
-				fs.unlinkSync(filePath); // Delete the temp file
+			
 				return res.status(400).json({ message: "Invalid XML file format." });
 			}
 
@@ -111,8 +111,7 @@ export const uploadReport = async (req, res) => {
 				const newReport = new Report(mappedData);
 				await newReport.save();
 
-				// Delete the temporary file
-				fs.unlinkSync(filePath);
+				
 
 				res.status(201).json({
 					message: "File uploaded, parsed, and saved successfully!",
@@ -120,7 +119,7 @@ export const uploadReport = async (req, res) => {
 				});
 			} catch (dbError) {
 				console.error("Error saving to database:", dbError);
-				fs.unlinkSync(filePath); // Delete temp file
+				
 				res.status(500).json({
 					message: "Error processing file data.",
 					error: dbError.message,
