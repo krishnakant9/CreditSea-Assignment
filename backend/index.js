@@ -4,25 +4,33 @@ import dotenv from "dotenv";
 import connectDB from "./db/connect.js";
 import reportRoute from "./routes/reportRoute.js";
 
+dotenv.config();
 connectDB();
 
-dotenv.config();
-
 const app = express();
-app.use(cors());
 
-app.use("/api/reports", reportRoute);
-const PORT = process.env.PORT || 5000;
 
+app.use(
+	cors({
+		origin: ["https://credit-sea-assignment-xi.vercel.app"],
+		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+		credentials: true,
+	})
+);
 
 app.use(express.json());
 
+
+app.options("*", cors());
+
+// ROUTES
+app.use("/api/reports", reportRoute);
 
 app.get("/", (req, res) => {
 	res.send("CreditSea Backend API is running!");
 });
 
-
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`);
