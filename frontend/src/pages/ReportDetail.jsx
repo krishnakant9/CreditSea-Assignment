@@ -20,7 +20,9 @@ const ReportDetail = () => {
       try {
         setIsLoading(true);
        
-        const res = await axios.get("/api/reports");
+        const res = await axios.get(
+					" https://creditsea-assignment-s1mi.onrender.com/api/reports"
+				);
         
         setReports(res.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
         setIsLoading(false);

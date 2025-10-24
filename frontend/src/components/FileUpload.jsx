@@ -35,11 +35,15 @@ const FileUpload = () => {
 		formData.append("xmlfile", file);
 
 		try {
-			const res = await axios.post("/api/reports/upload", formData, {
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			});
+			const res = await axios.post(
+				"https://creditsea-assignment-s1mi.onrender.com/api/reports/upload",
+				formData,
+				{
+					headers: {
+						"Content-Type": "multipart/form-data",
+					},
+				}
+			);
 
 			setIsLoading(false);
 			setMessage(res.data.message);
