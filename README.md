@@ -6,7 +6,7 @@ The application features a secure file upload endpoint, data extraction into a n
 
 ## 🔗 Submission Links
 
-* **Live Demo URL (Frontend on Vercel, Backend on Render):** [[PASTE YOUR VERCEL LIVE LINK HERE]](https://credit-sea-assignment-xi.vercel.app/)
+* **Live Demo URL (Frontend on Vercel, Backend on Render):** (https://credit-sea-assignment-xi.vercel.app/)
 
 ## 🛠️ Technical Stack & Implementation Details
 
